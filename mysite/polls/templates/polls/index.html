@@ -1,0 +1,11 @@
+{% include 'header.html' %}
+
+<ul class="dotted-list">
+{% for image in images_list %}
+    <li>
+        <h2><a href="{% url 'show_svg' image.id %}">{{ image.name  }}</a></h2>
+    </li>
+{% endfor %}
+</ul>
+
+{% include 'footer.html' %}

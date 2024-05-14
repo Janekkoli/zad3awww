@@ -1,0 +1,11 @@
+<!-- templates/header.html -->
+<header>
+    <!-- Add more content here as needed -->
+    {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}
+    <a href="{% url 'logout' %}">Logout</a>
+    </p>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</header>

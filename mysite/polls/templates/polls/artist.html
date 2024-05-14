@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Edit SVG</title>
+    <style>
+        svg {
+            border: 1px solid black;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <button id="add">Add Square</button>
+    <button id="delete">Delete Square</button>
+    <div id="svg-container">{{ svg.dataa |safe }} </div>
+    <div id="square-list"></div>
+
+    {% load static %}
+    <script src="{% static 'polls/script.js' %}"></script>
+</body>
+</html>
