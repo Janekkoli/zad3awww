@@ -7,19 +7,25 @@
 
     {% if artist %}
     <h2>Squares</h2>
-    <ul>
+    <table>
+    <tr>
+        <th>Position x</th>
+        <th>Position y</th>
+        <th>Width</th>
+        <th>Height</th>
+        <th>Color</th>
+        <th>Actions</th>
+    </tr>
         {% for square in list_of_squares %}
-            <li>
-                Position: ({{ square.x }}, {{ square.y }}), Size: ({{ square.width }} x {{ square.height }}), Color: {{ square.color }}
+            <tr>
+                <td> {{ square.x }} </td><td> {{ square.y }}</td><td>{{ square.width }} </td><td> {{ square.height }}</td><td> {{ square.color }}</td><td>
                 <form action="{% url 'delete_square' square.id %}" method="post">
                     {% csrf_token %}
                     <input type="submit" value="Delete">
-                </form>
-            </li>
-        {% empty %}
-            <li>No squares.</li>
+                </form> </td>
+            </tr>
         {% endfor %}
-    </ul>
+    </table>
 
 
         <h2>Add a Square</h2>
